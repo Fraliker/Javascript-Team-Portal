@@ -1,3 +1,35 @@
-<p>
-  coach-member-summary works!
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title">{{member.playerName}} | {{member.playerNickname}}</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-3">
+        <img src={{member.playerProfileImgUrl}} width="100" alt="picture of {{member.playerName}}">
+        <h3>Number: {{member.playerNumber}}</h3>
+      </div>
+      <div class="col-md-9">
+        <h3>Favorite Positions To Play</h3>
+        <ul>
+          <li *ngFor="let position of member.favoritePositions">{{position}}</li>
+        </ul>
+        <h3>Strongest Positions</h3>
+        <ul>
+          <li *ngFor="let position of member.strongestPositions">{{position}}</li>
+        </ul>
+        <h3>Weakest Positions</h3>
+        <ul>
+          <li *ngFor="let position of member.weakestPositions">{{position}}</li>
+        </ul>
+        <h3>Feedback</h3>
+        <ul>
+          <li *ngFor="let feedback of member.feedback">{{feedback}}</li>
+        </ul>
+        <h3>Accomplishments</h3>
+        <ul>
+          <li *ngFor="let accomplishment of member.accomplishments">{{accomplishment}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

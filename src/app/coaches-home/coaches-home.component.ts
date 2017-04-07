@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberTileComponent } from './../member-tile/member-tile.component';
 import { CreateLineupComponent } from './../create-lineup/create-lineup.component';
-import { AddMemberComponent } from './../add-member/add-member.componenet';
+import { AddMemberComponent } from './../add-member/add-member.component';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Member } from './../member.model';
 import { MemberService } from './../member.service';
