@@ -2,6 +2,7 @@ import { Component, OnInit, Input} from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Member } from './../member.model';
 import { MemberService } from './../member.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,15 +12,14 @@ import { MemberService } from './../member.service';
 })
 export class MemberSummaryComponent implements OnInit {
   @Input() member: Member;
-  selectedMember: Member;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  onSelect(member: Member): void {
-    this.selectedMember = member;
+  goToDetailPage(clickedMember): void {
+    this.router.navigate(['members', clickedMember.$key]);
   }
 
 }

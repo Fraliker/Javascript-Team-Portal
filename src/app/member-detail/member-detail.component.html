@@ -1,12 +1,12 @@
-<div *ngIf="selectedMember">
-  <h2>{{selectedMember.playerName}} details</h2>
+<div>
+  <h2>{{(memberToDisplay | async)?.playerName}} details</h2>
   <h3>Parents</h3>
-  <h4 *ngFor="let parent of selectedMember.parentsNames">{{parent}}</h4>
+  <h4 *ngFor="let parent of (memberToDisplay | async)?.parentsNames">{{parent}}</h4>
   <h3>Siblings</h3>
-  <h4 *ngFor="let sibling of selectedMember.siblingsNames">{{sibling}}</h4>
+  <h4 *ngFor="let sibling of (memberToDisplay | async)?.siblingsNames">{{sibling}}</h4>
   <h3>Phone Numbers</h3>
-  <h4 *ngFor="let number of selectedMember.phoneNumbers">{{number}}</h4>
+  <h4 *ngFor="let number of (memberToDisplay | async)?.phoneNumbers">{{number}}</h4>
   <h3>Emails</h3>
-  <h4 *ngFor="let email of selectedMember.emails">{{email}}</h4>
+  <h4 *ngFor="let email of (memberToDisplay | async)?.emails">{{email}}</h4>
 
 </div>
