@@ -1,3 +1,6 @@
-<p>
-  add-member works!
-</p>
+<h2>Add a Member</h2>
+<div>
+  <label>Member Name</label>
+  <input #newName>
+  <button (click)="addMember(newName.value)">Add Member</button>
+</div>

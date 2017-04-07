@@ -20,4 +20,8 @@ export class CoachesHomeComponent implements OnInit {
     this.members = this.memberService.getMembers();
   }
 
+  addMember(newMember: Member){
+    this.memberService.addMember(newMember);
+  }
+
 }
