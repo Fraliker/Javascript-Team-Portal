@@ -1,9 +1,5 @@
 <h2>SE Stars Members</h2>
 
-<div *ngFor="let member of members | async" class="panel panel-default">
-  <div class="panel-body">
-    <h3>{{member.playerName}} | {{member.playerNickname}}</h3>
-    <img src={{member.playerProfileImgUrl}} width="400" alt="image of player">
-    <h4>Number {{member.playerNumber}}</h4>
-  </div>
+<div *ngFor="let member of members | async">
+  <app-member-summary [member]="member"></app-member-summary>
 </div>
