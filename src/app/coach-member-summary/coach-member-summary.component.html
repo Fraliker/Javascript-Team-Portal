@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="panel panel-default" (click)="goToDetailPage(member)">
   <div class="panel-heading">
     <h2 class="panel-title">{{member.playerName}} | {{member.playerNickname}}</h2>
   </div>
@@ -12,22 +12,6 @@
         <h3>Favorite Positions To Play</h3>
         <ul>
           <li *ngFor="let position of member.favoritePositions">{{position}}</li>
-        </ul>
-        <h3>Strongest Positions</h3>
-        <ul>
-          <li *ngFor="let position of member.strongestPositions">{{position}}</li>
-        </ul>
-        <h3>Weakest Positions</h3>
-        <ul>
-          <li *ngFor="let position of member.weakestPositions">{{position}}</li>
-        </ul>
-        <h3>Feedback</h3>
-        <ul>
-          <li *ngFor="let feedback of member.feedback">{{feedback}}</li>
-        </ul>
-        <h3>Accomplishments</h3>
-        <ul>
-          <li *ngFor="let accomplishment of member.accomplishments">{{accomplishment}}</li>
         </ul>
       </div>
     </div>

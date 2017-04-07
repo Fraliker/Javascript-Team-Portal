@@ -1,3 +1,20 @@
-<p>
-  coach-member-detail works!
-</p>
+<div class="well">
+  <h1>{{(memberToDisplay | async)?.playerName}}'s Profile</h1>
+  <img src="{{(memberToDisplay | async)?.playerProfileImgUrl}}" alt="{{(memberToDisplay | async)?.playerName}}'s profile picture" width="400">
+  <h3>Strongest Positions</h3>
+  <ul>
+    <li *ngFor="let position of (memberToDisplay | async)?.strongestPositions">{{position}}</li>
+  </ul>
+  <h3>Weakest Positions</h3>
+  <ul>
+    <li *ngFor="let position of (memberToDisplay | async)?.weakestPositions">{{position}}</li>
+  </ul>
+  <h3>Feedback</h3>
+  <ul>
+    <li *ngFor="let feedback of (memberToDisplay | async)?.feedback">{{feedback}}</li>
+  </ul>
+  <h3>Accomplishments</h3>
+  <ul>
+    <li *ngFor="let accomplishment of (memberToDisplay | async)?.accomplishments">{{accomplishment}}</li>
+  </ul>
+</div>

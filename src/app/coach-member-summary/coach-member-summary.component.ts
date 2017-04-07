@@ -10,9 +10,13 @@ import { Router } from '@angular/router';
 })
 export class CoachMemberSummaryComponent implements OnInit {
   @Input() member: Member;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  goToDetailPage(clickedMember): void {
+    this.router.navigate(['coaches/members', clickedMember.$key]);
   }
 
 }

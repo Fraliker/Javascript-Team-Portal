@@ -1,5 +1,6 @@
 <div>
   <h2>{{(memberToDisplay | async)?.playerName}} details</h2>
+  <img src="{{(memberToDisplay | async)?.playerProfileImgUrl}}" alt="{{(memberToDisplay | async)?.playerName}}'s profile picture" width="400">
   <h3>Parents</h3>
   <h4 *ngFor="let parent of (memberToDisplay | async)?.parentsNames">{{parent}}</h4>
   <h3>Siblings</h3>
