@@ -12,10 +12,16 @@ import { MemberService } from './../member.service';
 })
 export class MemberListComponent implements OnInit {
   members: FirebaseListObservable<any[]>;
+  selectedMember: Member;
+
   constructor(private memberService: MemberService) { }
 
   ngOnInit() {
     this.members = this.memberService.getMembers();
+  }
+
+  onSelect(member: Member): void {
+    this.selectedMember = member;
   }
 
 }

@@ -1,7 +1,8 @@
-<div class="panel panel-default">
+<div class="panel panel-default" (click)="onSelect(member)">
   <div class="panel-body text-center">
     <h2>{{member.playerName}} | {{member.playerNickname}}</h2>
     <img src={{member.playerProfileImgUrl}} width="500" alt="picture of {{member.playerName}}">
     <h3>Number: {{member.playerNumber}}</h3>
+    <app-member-detail [selectedMember]="selectedMember"></app-member-detail>
   </div>
 </div>

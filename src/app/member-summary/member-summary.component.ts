@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Member } from './../member.model';
 import { MemberService } from './../member.service';
@@ -11,10 +11,15 @@ import { MemberService } from './../member.service';
 })
 export class MemberSummaryComponent implements OnInit {
   @Input() member: Member;
+  selectedMember: Member;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(member: Member): void {
+    this.selectedMember = member;
   }
 
 }
