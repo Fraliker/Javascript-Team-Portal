@@ -22,4 +22,9 @@ export class MemberService {
     this.members.push(newMember);
   }
 
+  removeMember(memberToRemove): void {
+    let memberEntryInDatabase = this.getMemberById(memberToRemove.$key);
+    memberEntryInDatabase.remove();
+  }
+
 }
