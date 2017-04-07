@@ -1,3 +1,12 @@
-<p>
-  coaches-home works!
-</p>
+<div class="row">
+  <div class="col-md-9">
+    <h2>Our Team</h2>
+    <div *ngFor="let member of members | async">
+      <app-member-tile [member]="member"></app-member-tile>
+    </div>
+    <app-add-member></app-add-member>
+  </div>
+  <div class="col-md-3">
+    <app-create-lineup></app-create-lineup>
+  </div>
+</div>
