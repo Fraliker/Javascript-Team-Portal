@@ -24,6 +24,7 @@ import { GameprepComponent } from './gameprep/gameprep.component';
 
 // routes import
 import { routes } from './app.routes';
+import { CoachesMembersListComponent } from './coaches-members-list/coaches-members-list.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { routes } from './app.routes';
     BattingOrderComponent,
     FieldingAssignmentsComponent,
     CoachesHomeComponent,
-    GameprepComponent
+    GameprepComponent,
+    CoachesMembersListComponent
   ],
   imports: [
     BrowserModule,
