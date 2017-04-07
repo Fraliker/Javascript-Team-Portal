@@ -21,10 +21,25 @@ import { BattingOrderComponent } from './batting-order/batting-order.component';
 import { FieldingAssignmentsComponent } from './fielding-assignments/fielding-assignments.component';
 import { CoachesHomeComponent } from './coaches-home/coaches-home.component';
 import { GameprepComponent } from './gameprep/gameprep.component';
+import { CoachesMembersListComponent } from './coaches-members-list/coaches-members-list.component';
+
+// service imports
+import { MemberService } from './member.service';
 
 // routes import
 import { routes } from './app.routes';
-import { CoachesMembersListComponent } from './coaches-members-list/coaches-members-list.component';
+
+// firebase imports
+import { masterFirebaseConfig } from './api-keys';
+import { AngularFireModule } from 'angularfire2';
+
+
+export const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  storageBucket: masterFirebaseConfig.storageBucket
+};
 
 @NgModule({
   declarations: [
@@ -51,9 +66,10 @@ import { CoachesMembersListComponent } from './coaches-members-list/coaches-memb
     BrowserModule,
     FormsModule,
     HttpModule,
-    routes
+    routes,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
+  providers: [ MemberService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

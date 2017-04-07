@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { Member } from './../member.model';
+import { MemberService } from './../member.service';
 
 @Component({
   selector: 'app-member-list',
@@ -6,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./member-list.component.css']
 })
 export class MemberListComponent implements OnInit {
+  members: FirebaseListObservable<any[]>;
 
-  constructor() { }
+  constructor(private memberService: MemberService) { }
 
   ngOnInit() {
+    this.members = this.memberService.getMembers();
   }
 
 }

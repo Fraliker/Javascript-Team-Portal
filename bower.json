@@ -1,0 +1,20 @@
+{
+  "name": "sestarspdx",
+  "description": "",
+  "main": "",
+  "authors": [
+    "David Quisenberry <dmqpdx@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
