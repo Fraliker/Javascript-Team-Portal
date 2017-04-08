@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Member } from './../member.model';
 
 @Component({
   selector: 'app-member-edit',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./member-edit.component.css']
 })
 export class MemberEditComponent implements OnInit {
+  @Input() member: Member;
+  editOpen: boolean = false;
+  @Output() clickSender = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  showEdit(): void {
+    this.editOpen = true;
+  }
+
+  updateMember(memberToUpdate:Member) {
+    this.clickSender.emit(memberToUpdate);
+    this.editOpen = false;
   }
 
 }

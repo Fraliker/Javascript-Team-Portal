@@ -27,4 +27,25 @@ export class MemberService {
     memberEntryInDatabase.remove();
   }
 
+  updateMember(memberToUpdate): void {
+    console.log(memberToUpdate.playerNumber);
+
+    let memberEntryInDatabase = this.getMemberById(memberToUpdate.$key);
+    memberEntryInDatabase.update({
+      accomplishments: memberToUpdate.accomplishments,
+      emails: memberToUpdate.emails,
+      favoritePositions: memberToUpdate.favoritePositions,
+      feedback: memberToUpdate.feedback,
+      parentsNames: memberToUpdate.parentsNames,
+      playerNumber: memberToUpdate.playerNumber,
+      phoneNumbers: memberToUpdate.phoneNumbers,
+      playerName: memberToUpdate.playerName,
+      playerNickname: memberToUpdate.playerNickname,
+      playerProfileImgUrl: memberToUpdate.playerProfileImgUrl,
+      siblingsNames: memberToUpdate.siblingsNames,
+      strongestPositions: memberToUpdate.strongestPositions,
+      weakestPositions: memberToUpdate.weakestPositions
+    });
+  }
+
 }

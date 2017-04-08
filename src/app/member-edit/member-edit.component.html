@@ -1,3 +1,13 @@
-<p>
-  member-edit works!
-</p>
+<button (click)="showEdit()">Edit</button>
+  <div *ngIf="editOpen">
+
+      <label>Name:</label>
+      <input [(ngModel)]="member.playerName" placeholder="{{member.playerName}}"/>
+      <label>Number:</label>
+      <input [(ngModel)]="member.playerNumber" placeholder="{{member.playerNumber}}"/>
+      <label>Nickname:</label>
+      <input [(ngModel)]="member.playerNickname" placeholder="{{member.playerNickname}}"/>
+      <button (click)="updateMember(member)">Save Edit</button>
+
+
+  </div>

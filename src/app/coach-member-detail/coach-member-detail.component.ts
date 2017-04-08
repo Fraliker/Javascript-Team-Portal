@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { MemberService } from './../member.service';
 
+
 @Component({
   selector: 'app-coach-member-detail',
   templateUrl: './coach-member-detail.component.html',
@@ -22,7 +23,11 @@ export class CoachMemberDetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.memberId = parseInt(urlParameters['id']);
     });
-    this.memberToDisplay = this.memberService.getMemberById(this.memberId);
+    this.memberToDisplay = this.memberService.getMemberById(this.memberId).subscribe(res => {this.memberToDisplay = res});
+  }
+
+  updateMember(memberToUpdate:Member) {
+    this.memberService.updateMember(memberToUpdate);
   }
 
 }

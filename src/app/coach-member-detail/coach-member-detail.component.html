@@ -1,20 +1,21 @@
 <div class="well">
-  <h1>{{(memberToDisplay | async)?.playerName}}'s Profile</h1>
-  <img src="{{(memberToDisplay | async)?.playerProfileImgUrl}}" alt="{{(memberToDisplay | async)?.playerName}}'s profile picture" width="400">
+  <h1>{{memberToDisplay.playerName}}'s Profile</h1>
+  <img src="{{memberToDisplay.playerProfileImgUrl}}" alt="{{memberToDisplay.playerName}}'s profile picture" width="400">
   <h3>Strongest Positions</h3>
   <ul>
-    <li *ngFor="let position of (memberToDisplay | async)?.strongestPositions">{{position}}</li>
+    <li *ngFor="let position of memberToDisplay.strongestPositions">{{position}}</li>
   </ul>
   <h3>Weakest Positions</h3>
   <ul>
-    <li *ngFor="let position of (memberToDisplay | async)?.weakestPositions">{{position}}</li>
+    <li *ngFor="let position of memberToDisplay.weakestPositions">{{position}}</li>
   </ul>
   <h3>Feedback</h3>
   <ul>
-    <li *ngFor="let feedback of (memberToDisplay | async)?.feedback">{{feedback}}</li>
+    <li *ngFor="let feedback of memberToDisplay.feedback">{{feedback}}</li>
   </ul>
   <h3>Accomplishments</h3>
   <ul>
-    <li *ngFor="let accomplishment of (memberToDisplay | async)?.accomplishments">{{accomplishment}}</li>
+    <li *ngFor="let accomplishment of memberToDisplay.accomplishments">{{accomplishment}}</li>
   </ul>
+  <app-member-edit [member]="memberToDisplay" (clickSender)="updateMember($event)"></app-member-edit>
 </div>
