@@ -23,8 +23,9 @@ import { CoachesHomeComponent } from './coaches-home/coaches-home.component';
 import { GameprepComponent } from './gameprep/gameprep.component';
 import { CoachesMembersListComponent } from './coaches-members-list/coaches-members-list.component';
 
-// service imports
+// provider imports
 import { MemberService } from './member.service';
+import { SkillPipe } from './skill.pipe';
 
 // routes import
 import { routes } from './app.routes';
@@ -60,7 +61,8 @@ export const firebaseConfig = {
     FieldingAssignmentsComponent,
     CoachesHomeComponent,
     GameprepComponent,
-    CoachesMembersListComponent
+    CoachesMembersListComponent,
+    SkillPipe
   ],
   imports: [
     BrowserModule,

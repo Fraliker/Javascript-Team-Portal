@@ -28,7 +28,6 @@ export class MemberService {
   }
 
   updateMember(memberToUpdate): void {
-    console.log(memberToUpdate.playerNumber);
 
     let memberEntryInDatabase = this.getMemberById(memberToUpdate.$key);
     memberEntryInDatabase.update({

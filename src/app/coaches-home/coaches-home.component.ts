@@ -12,16 +12,22 @@ import { MemberService } from './../member.service';
   styleUrls: ['./coaches-home.component.css']
 })
 export class CoachesHomeComponent implements OnInit {
-  members: FirebaseListObservable<any[]>;
-
+  members;
+  position: String = "Pitcher";
   constructor(private memberService: MemberService) { }
 
   ngOnInit() {
-    this.members = this.memberService.getMembers();
+    this.members = this.memberService.getMembers().subscribe(res => {
+      this.members = res;
+    });
   }
 
   addMember(newMember: Member){
     this.memberService.addMember(newMember);
+  }
+
+  setPosition(positionValue: String){
+    this.position = positionValue;
   }
 
 }
