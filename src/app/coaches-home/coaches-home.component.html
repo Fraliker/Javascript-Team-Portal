@@ -1,6 +1,9 @@
 <div class="row">
   <div class="col-md-9">
     <h2>Our Team</h2>
+    <div *ngFor="let member of members | async">
+      <app-member-tile [member]="member"></app-member-tile>
+    </div>
     <h2>Filter by Weak Positions</h2>
     <select (change)="setPosition($event.target.value)">
       <option value="Pitcher">Pitcher</option>
@@ -13,9 +16,11 @@
       <option value="Batting">Batting</option>
       <option value="None">None</option>
     </select>
-    <div *ngFor="let member of members | skill:position">
+
+    <div *ngFor="let member of sortMembers | skill:position">
       <app-member-tile [member]="member"></app-member-tile>
     </div>
+
     <app-add-member (clickSender)="addMember($event)"></app-add-member>
   </div>
   <div class="col-md-3">
