@@ -14,8 +14,8 @@ export class AddMemberComponent implements OnInit {
   ngOnInit() {
   }
 
-  addMember(playerName: string){
-    let newMember = new Member(playerName, [""], [""], 99, [""], [""], "", [""], [""], [""], [""], [""], "");
+  addMember(playerName: string, parentNames: string[], siblingNames: string[], playerNumber: number, phoneNumbers: string[], emails: string[], nickname: string, favoritePositions: string[], strongestPositions: string[], weakestPositions: string[], feedback: string[], accomplishments: string[], imgUrl: string){
+    let newMember = new Member(playerName, parentNames, siblingNames, playerNumber, phoneNumbers, emails, nickname, favoritePositions, strongestPositions, weakestPositions, feedback, accomplishments, imgUrl);
     this.clickSender.emit(newMember);
   }
 

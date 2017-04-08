@@ -2,5 +2,29 @@
 <div>
   <label>Member Name</label>
   <input #newName>
-  <button (click)="addMember(newName.value)">Add Member</button>
+  <label>Parent Name</label>
+  <input #newParentName>
+  <label>Sibling Name</label>
+  <input #newSiblingName>
+  <label>Player Number</label>
+  <input #newPlayerNumber>
+  <label>Phone Number</label>
+  <input #newPhoneNumber>
+  <label>Email</label>
+  <input #newEmail>
+  <label>Nickname</label>
+  <input #newNickname>
+  <label>Favorite Position</label>
+  <input #newFavoritePosition>
+  <label>Strongest Position</label>
+  <input #newStrongestPosition>
+  <label>Weakest Position</label>
+  <input #newWeakestPosition>
+  <label>Feedback</label>
+  <input #newFeedback>
+  <label>Accomplishment</label>
+  <input #newAccomplishment>
+  <label>Player Image Url</label>
+  <input #newPlayerProfileImgUrl>
+  <button (click)="addMember(newName.value,[newParentName.value], [newSiblingName.value], newPlayerNumber.value, [newPhoneNumber.value], [newEmail.value], newNickname.value, [newFavoritePosition.value], [newStrongestPosition.value], [newWeakestPosition.value], [newFeedback.value], [newAccomplishment.value], newPlayerProfileImgUrl.value)">Add Member</button>
 </div>

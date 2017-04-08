@@ -14,7 +14,7 @@ import { MemberService } from './../member.service';
 export class CoachesHomeComponent implements OnInit {
   members: FirebaseListObservable<any[]>;
   sortMembers;
-  position: String = "none";
+  position: string = "none";
   constructor(private memberService: MemberService) { }
 
   ngOnInit() {
@@ -27,7 +27,7 @@ export class CoachesHomeComponent implements OnInit {
     this.memberService.addMember(newMember);
   }
 
-  setPosition(positionValue: String){
+  setPosition(positionValue: string){
     this.position = positionValue;
   }
 

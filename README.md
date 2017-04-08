@@ -15,6 +15,9 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 
 See Draw.io for angular site structure https://drive.google.com/file/d/0B-6xmmuNJKLXZXdXbVlXdHBxWGM/view?usp=sharing
 
+## Deployed Site
+https://sestarspdx.firebaseapp.com/
+
 ## Instructions before building
 
 Clone this repo.
